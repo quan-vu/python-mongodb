@@ -1,50 +1,33 @@
-# Flask and MongoDB practice
+# Quickstart MongoDB in Python
 
-A sample for practice MongoDB in python Flask.
+A quickstart with MongoDB in Python.
 
-## Setup Database
+## Database
 
-1. Start MongoDB server with docker:
+Start MongoDB server with docker:
 
-    ```shell
-    docker run -d -p 27017:27017 --name mongodb mongo
-    ```
+```shell
+docker run -d -p 27017:27017 --name mongodb mongo
+```
 
-2. Create MongoDB: **mytest**
+## Test project
 
-3. Import sample data: data/users.json
+Create python virtual environment:
 
-    ```
-    mytest
-        |_ users
-    ```
+```shell
+virtualenv -p python3 venv
+source venv/bin/activate
+pip install -r requirements.in
+```
 
-## Run project
+Run app:
 
-1. Create virtualenv:
+```shell
+python app.py
+```
 
-    ```shell
-    virtualenv -p python3 venv
-    source venv/bin/activate
-    pip install -r requirements.in
-    ```
+Result
 
-2. Start project:
-
-    ```shell
-    export FLASK_APP=app.py
-    export FLASK_ENV=development
-    flask run
-    ```
-
-3. Resutl
-
-    ```
-    * Serving Flask app "app.py" (lazy loading)
-    * Environment: development
-    * Debug mode: on
-    * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-    * Restarting with stat
-    * Debugger is active!
-    * Debugger PIN: 522-870-215
-    ```
+```
+{u'_id': ObjectId('5e4dec4dcc2af8e3fb82f287'), u'name': u'Quan Vu'}
+```
